@@ -16,13 +16,6 @@ int power(int base,int exponent) {
     else
         return (1 / base) * power(base, exponent + 1);
 }
-// constexpr int fact(int i){
-//     int p = 1;
-//     for (int j = 2; j <= i; ++j) {
-//         p *= j;
-//     }
-//     return p;
-// }
 
 int ord(const board& board)
 {
@@ -79,14 +72,12 @@ pair<int, int> find_space(const board& b){
     for (int r = 0; r < 3; ++r)
         for (int c = 0; c < 3; ++c)
             if (b.e[r][c] == 'Z') return { r, c };
-//    assert(0);
 }
 
 board up(const board& b)
 {
     pair <int,int>p= find_space(b);
     int r=p.first; int c=p.second;
-//    tie(r, c) = find_space(b);
     if (r == 2) return b;
     board o = b;
     if (o.e[r+1][c] == 'U'){
@@ -200,12 +191,8 @@ vector<int> solve(const board& src, const board& dest){
 
     q.push(src);
     visited[ord(src)] = L;
-//    cout<<"ehllo2"<<endl;
-//    cout<<visited[ord(src)]<<endl;
-//    cout<<"ehllo3\n";
 
     while (!q.empty()){
-//        cout<<"ehllo";
         board u = q.front();
         q.pop();
         if (is_same1(u, dest)){
@@ -285,7 +272,6 @@ int main(){
     }
 
     auto moves = solve(src, dest);
-//    cout<<"hello";
     print_moves(moves);
     print_board(dest);
 
