@@ -1,1 +1,1 @@
-# Rubic-s-Cube-and-Upitup
+# Rubik-s-Cube-and-Upitup
